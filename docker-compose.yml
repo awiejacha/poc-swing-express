@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    entrypoint: ["npm"]
+    command: ["run", "dev"]
+    image: amaysim/serverless:3.30.1
+    container_name: app
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    networks:
+      default:
+    env_file:
+      - "./_docker/.env"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - "./:/opt/app:delegated"
+networks:
+  default:
+volumes:
+  localstack:

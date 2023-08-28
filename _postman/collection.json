@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "4d94f3b5-5d41-4791-831b-1c8a91e103e4",
+		"name": "[PoC] Swing-Fastify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6650752",
+		"_collection_link": ""
+	},
+	"item": [
+		{
+			"name": "sample/echo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "payload",
+							"value": "{}",
+							"type": "string"
+						},
+						{
+							"key": "secret",
+							"value": "jwt_secret",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/sample/echo/x?sampleQuery=y",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sample",
+						"echo",
+						"x"
+					],
+					"query": [
+						{
+							"key": "sampleQuery",
+							"value": "y"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

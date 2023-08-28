@@ -1,0 +1,50 @@
+{
+  "name": "poc-swing-express",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/app.js",
+  "engines": {
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=18.0.0 <19.0.0"
+  },
+  "scripts": {
+    "test": "echo \"No tests implemented so far\" && exit 1",
+    "start": "npm run build:ts && fastify start -l info dist/app.js",
+    "build:ts": "tsc",
+    "watch:ts": "tsc -w",
+    "dev": "npm run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"npm:watch:ts\" \"npm:dev:start\"",
+    "dev:start": "nodemon -q dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:awiejacha/poc-swing-express.git"
+  },
+  "author": "Adrian Wiejacha <adrian.wiejacha@gmail.com>",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "dependencies": {
+    "@fastify/autoload": "^5.0.0",
+    "@fastify/helmet": "^10.1.1",
+    "@fastify/jwt": "^7.2.0",
+    "@fastify/sensible": "^5.0.0",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "fastify": "^4.0.0",
+    "fastify-plugin": "^4.0.0",
+    "helmet": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "concurrently": "^7.0.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-typescript-prettier": "^5.0.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "keywords": []
+}
